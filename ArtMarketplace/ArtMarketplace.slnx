@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Domain/">
+    <Project Path="../Domain/Marketplace.Domain/Marketplace.Domain.csproj" />
+    <Project Path="../Domain/Marketplace.ValueObjects/Marketplace.ValueObjects.csproj" />
+  </Folder>
+  <Folder Name="/DomainApp/">
+    <Project Path="../DomainApp/DomainApp.csproj" Id="c169a771-aef0-41ec-83b3-fc0392b852dd" />
+  </Folder>
+</Solution>
