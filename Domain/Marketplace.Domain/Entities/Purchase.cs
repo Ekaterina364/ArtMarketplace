@@ -5,16 +5,27 @@ using Marketplace.ValueObjects;
 
 namespace Marketplace.Domain.Entities;
 
-public class Purchase(Guid id, Buyer buyer, Product product, Price purchasePrice) : Entity<Guid>(id)
+public class Purchase : Entity<Guid>
 {
-    public Buyer Buyer { get; private set; } = buyer;
-    public Product Product { get; private set; } = product;
-    public Price PurchasePrice { get; private set; } = purchasePrice ?? throw new ArgumentNullValueException(nameof(purchasePrice));
-    public PurchaseStatus Status { get; private set; } = PurchaseStatus.Pending;
-    public DateTime PurchasedAt { get; private set; } = DateTime.UtcNow;
+    public Buyer Buyer { get; private set; } = null!;
+    public Product Product { get; private set; } = null!;
+    public Price PurchasePrice { get; private set; }
+    public PurchaseStatus Status { get; private set; }
+    public DateTime PurchasedAt { get; private set; }
 
     private readonly ICollection<Download> _downloads = [];
     public IReadOnlyCollection<Download> Downloads => (IReadOnlyCollection<Download>)_downloads;
+
+    protected Purchase() { }
+
+    public Purchase(Guid id, Buyer buyer, Product product, Price purchasePrice) : base(id)
+    {
+        Buyer = buyer ?? throw new ArgumentNullValueException(nameof(buyer));
+        Product = product ?? throw new ArgumentNullValueException(nameof(product));
+        PurchasePrice = purchasePrice ?? throw new ArgumentNullValueException(nameof(purchasePrice));
+        Status = PurchaseStatus.Pending;
+        PurchasedAt = DateTime.UtcNow;
+    }
 
     public bool MarkAsPaid()
     {

@@ -6,4 +6,11 @@
   <Folder Name="/DomainApp/">
     <Project Path="../DomainApp/DomainApp.csproj" Id="c169a771-aef0-41ec-83b3-fc0392b852dd" />
   </Folder>
+  <Folder Name="/Infractructure/">
+    <Project Path="../Infrastructure/ArtMarketplace.Infrastructure.EntityFramework/ArtMarketplace.Infrastructure.EntityFramework.csproj" Id="99e6093d-c1f4-4919-b901-f04932a719db" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="../Presentation/ArtMarketplace.WebHost/ArtMarketplace.WebHost.csproj" Id="7b44d5fa-43b5-423d-89a2-26470e8fedc6" />
+  </Folder>
+  <Folder Name="/Solution Items/" />
 </Solution>

@@ -5,7 +5,7 @@ namespace Marketplace.Domain.Entities;
 
 public class Buyer(Guid id, Username username, Email email) : Entity<Guid>(id)
 {
-    private readonly ICollection<Purchase> _purchases = new List<Purchase>();
+    private readonly ICollection<Purchase> _purchases = [];
 
     public Username Username { get; private set; } = username ?? throw new ArgumentNullValueException(nameof(username));
     public Email Email { get; private set; } = email ?? throw new ArgumentNullValueException(nameof(email));
