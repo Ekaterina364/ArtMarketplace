@@ -1,0 +1,6 @@
+@ArtMarketplace.WebHost_HostAddress = http://localhost:5156
+
+GET {{ArtMarketplace.WebHost_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
